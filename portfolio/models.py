@@ -7,6 +7,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to="projects")#le digo que cree la carpeta projects para que guarde las imgs
     created = models.DateTimeField(auto_now_add=True)#Este se ejecuta solo la primera vez(al crearse)
     updated = models.DateTimeField(auto_now= True)#Este se ejecuta cada vez que se actualiza una instancia
+    url = models.URLField(blank=True, null=True)
 
     class Meta():#para añadir configuraciones extendidas
         ordering = ["-created"]#La lista es por si lo quiero ordenar en base a más cosas, con el signo de menos logro ordenarlo de más nuevo a más viejo
